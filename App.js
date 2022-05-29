@@ -17,7 +17,7 @@ export default function App() {
 }
  */
 // Componente definido através do uso de uma classe
-
+/* 
 export default class App extends React.Component{
   constructor (props){
     super (props);
@@ -33,6 +33,29 @@ export default class App extends React.Component{
         <Button 
         title="Alterar texto"
         onPress={() => {this.setState({outputText:"Texto inicial"})}}
+        />
+      </View>
+    );
+  }
+}
+ */
+// Variável definida para ser um contador
+
+export default class App extends React.Component{
+  constructor (props){
+    super (props);
+    this.state = {
+      contador: 0
+    }
+  }
+  render (){
+    return (
+      <View style={styles.container}>
+        <Text>{this.state.contador}</Text>
+        <StatusBar style="auto" />
+        <Button 
+        title="Alterar texto"
+        onPress={() => {this.setState({contador: this.state.contador + 1})}}
         />
       </View>
     );
