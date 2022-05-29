@@ -1,7 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-web';
-import { useState } from 'react';
+// import { useState } from 'react';
 // Componente definido através do uso de uma função
 /* 
 export default function App() {
@@ -63,7 +63,7 @@ export default class App extends React.Component{
 }
  */
 // Outro exemplo de componente definido por uma função
-
+/* 
 export default function App() {
   
   const [texto, setTexto] = useState('Texto inicial')
@@ -80,6 +80,32 @@ export default function App() {
 
     </View>
   );
+}
+ */
+// Outro exemplo de variável definida para ser um contador
+
+export default class extends React.Component{
+
+  constructor (props){
+    super(props);
+    this.state = {
+      contador: 0
+    }
+  }
+
+  render(){
+    return(
+      <View style={styles.container}>
+        <Text>{this.state.contador}</Text>
+        <Button 
+          title="OK"
+          onPress={() => this.setState({
+            contador: this.state.contador + 1
+          })}
+        />
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
