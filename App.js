@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'react-native-web';
-import { useState } from 'react';
+// import { useState } from 'react';
 // Componente definido através do uso de uma função
-
+/* 
 export default function App() {
   const [outputText, setOutputText] = useState('Texto inicial');
   return (
@@ -14,6 +14,29 @@ export default function App() {
       onPress={() => {setOutputText("Novo texto")}}/>
     </View>
   );
+}
+ */
+// Componente definido através do uso de uma classe
+
+export default class App extends React.Component{
+  constructor (props){
+    super (props);
+    this.state = {
+      outputText: "Novo Texto"
+    }
+  }
+  render (){
+    return (
+      <View style={styles.container}>
+        <Text>{this.state.outputText}</Text>
+        <StatusBar style="auto" />
+        <Button 
+        title="Alterar texto"
+        onPress={() => {this.setState({outputText:"Texto inicial"})}}
+        />
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
